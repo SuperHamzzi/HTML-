@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>찾아오시는길</title>
+</head>
+<!-- 외부 스타일시트 문서 링크 -->
+  <link href="../css/basic.css"  rel="stylesheet" />
+<!-- 외부 폰트 연결 -->
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+
+<!-- 립트 문서 연결 -->외부 스크
+
+<!-- 스타일시트 작성 -->
+<style>
+  /* header 부분 */
+  .top_content{
+    /* 위치 고정 : 반드시 부모에는  Width, height 값 설정
+                          부모의 position: relative; 로 설정 */
+    width: 960px;
+    height: 180px; /* 수정할 부분 */
+    position: relative;
+    
+    margin-bottom: 10px;
+    background-color: aquamarine; /* 지울부분 */
+  }
+ /* 위쪽 상단 부분 
+ .top_header{
+    width: 960px;
+    height: 100px;*/  /* 수정할 부분 */
+
+    /* flex 속성 이용
+    display: flex;
+    justify-content: space-between; 
+ }*/
+.logo{
+  left: 10px;
+  top : 10px;
+  position: absolute;
+  width: 500px;
+  height: 100px;
+  background-color: aqua; /* 지울부분 */
+}
+.logo>a{
+  display: inline-block;
+  overflow: hidden;
+}
+.logo img{
+  float: left;
+  width: 70px;
+  height: 70px;
+  line-height: 70px;
+  margin-right: 10px;
+}
+.logo h1{
+  display: inline-block;
+  width: 300px;
+  height: 70px;
+  line-height: 70px;
+  font-family: 'Nanum Pen Script', cursive;
+  font-size: 3.0rem;
+ /* font-family: 'Nanum Brush Script', cursive; */
+}
+.top_nav{
+  top : 5px;
+  right: 10px;
+  position: absolute;
+}
+.top_nav a{
+  display: inline-block;
+  padding: 5px 5px;
+  font-weight: 900;
+}
+.top_nav a:hover{
+  color: white;
+  border-radius: 5px; /* 모서리 둥글게 */
+  background-color:blueviolet;  
+}
+
+.main_nav{
+  left: 50px; /* 수정할 부분 */
+  bottom: 10px;
+  position: absolute;
+  width: 960px;
+  text-align: center;
+}
+.main_nav li{
+  display: inline-block;
+
+}
+.main_nav li>a{
+  display: inline-block;
+  padding: 10px;
+}
+.main_nav li>a:hover{
+  color: blue;
+}
+.main_link{
+  width: 960px;
+  height: 60px;
+  position:relative;
+  margin-bottom: 10px;
+
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+.link_logo{
+  top:12px;
+  left:10px;
+  position: absolute;
+  overflow: hidden;
+}
+.link_logo>img{
+  float: left;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  margin-right: 10px;
+}
+.link_logo>h3{
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+  margin-right: 40px;
+}
+.link_logo>h2{
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+  font-size: 1.3rem;
+}
+
+.link_site{
+  top:12px;
+  right : 10px;
+  position: absolute;
+}
+.link_site>a{
+  display: inline-block;
+  padding: 2px 6px;
+}
+.link_site img{
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+}
+
+/* section 부분 */
+.section{
+ width: 960px;
+ overflow: hidden;
+ margin-bottom: 10px;
+}
+.left_aside{
+  float: left;
+  margin-right: 20px;
+  width: 180px;
+  text-align: center;  /* 수정할 부분 */
+}
+.left_aside ul{
+  margin: 0px;
+  padding: 0px;
+}
+.left_aside li{
+  width: 180px;
+  height: 40px;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black; 
+}
+.left_aside li:first-child{  /* nth-child(1), 홀수:nth-child(2n+1), 짝수 : nth-child(2n)*/
+  border-top: 1px solid black;
+  background-color: rgb(223, 223, 223);
+  
+}
+/*
+.left_aside li:nth-child(2n){
+  background-color: blanchedalmond;
+} */
+.left_aside li>a{
+  display: inline-block;
+  width: 180px;
+  height: 40px;
+  line-height: 40px;
+}
+.left_aside li>a:hover{
+  background-color: aquamarine;
+}
+
+/* 오른쪽 부분 */
+.section_right{
+  float: left;
+  width: 730px;/* 수정할 부분 */
+  margin-left: 20px;
+}
+.right_title{
+  font-size: 18px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+.map{
+  border: 1px solid black;
+  width:720px; /* 지도 너비와 같게 */
+  height:500px;
+  margin-bottom: 10px;
+}
+/* 주소 및 연락처 */
+table{
+  border-collapse: 0px; /*테두리 합침*/
+  border-spacing: 0px;
+  margin-bottom: 10px;
+  border-top: 1px solid black;
+}
+
+td{
+  border-bottom: 1px solid black;
+  width : 120px;
+  height : 30px;
+  line-height : 30px;
+  padding-left:10px;
+  letter-spacing: 1px;
+
+}
+.table_head{
+  padding-left:0px;
+  background-color:beige;
+  font-weight:800;
+  letter-spacing:2px;
+  text-align: center;
+}
+.sub_bus{
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+</style>
+
+<!-- 스크립트 문서 -->
+<script>
+
+</script>
+<body>
+  <!-- header 부분 -->
+  <div class="top_content">
+    <!-- 위쪽 상단 부분 -->
+      <!-- logo 부분 -->
+        <div class="logo">
+          <a href="index.html">
+            <img src="./images/logo.png">
+            <h1>책마을 책세상</h1>
+          </a>
+        </div>
+      <!-- 로그인 회원가입 사이트맵 -->
+        <div class="top_nav">
+          <a href="login.html" target="_blank"> 로그인 </a>
+          <a href="membership.html" target="_blank"> 회원가입 </a>
+          <a href="sitemap.html" target="_blank"> 사이트맵 </a>
+        </div>
+
+    <!-- 메인 메뉴 부분 -->
+    <div class="main_nav">
+      <ul> <!-- li*7>a[href="#"]-->
+        <li><a href="#">회사소개</a></li>
+        <li><a href="#">프로그램</a></li>
+        <li><a href="#">열린공간</a></li>
+        <li><a href="#">동아리모임</a></li>
+        <li><a href="#">이용안내</a></li>
+        <li><a href="#">자료실</a></li>
+        <li><a href="#">오시는길</a></li>
+      </ul>
+    </div>
+  </div>
+  <!-- 검색 부분 -->
+  <div class="main_link">
+    <div class="link_logo">
+      <img src="./images/favicon01.png">
+      <h3>책마을책세상 안내</h3>
+      <h2>오시는 길</h2>
+    </div>
+    <div class="link_site">
+      <a href="#"><img src="./images/favicon01.png"></a>
+      <a href="#"><img src="./images/favicon01.png"></a>
+      <a href="#"><img src="./images/favicon01.png"></a>
+      <a href="#"><img src="./images/favicon01.png"></a>
+    </div>
+  </div>
+
+  <!-- 본문 section 부분 -->
+  <div class="section">
+          <!-- 왼쪽 aside 부분 -->
+    <div class="left_aside">
+      <ul>
+        <li><a href="#">책마을책세상 안내</a></li>
+        <li><a href="#">회사소개</a></li>
+        <li><a href="#">프로그램</a></li>
+        <li><a href="#">수강신청</a></li>
+        <li><a href="#">도서추천</a></li>
+        <li><a href="#">오시는길</a></li>
+      </ul>
+    </div>
+          <!-- 오른쪽 map 부분-->
+    <div class="section_right">
+      <h2 class="right_title">찾아오시는 길</h2>
+      <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.280294573051!2d127.03746565055734!3d37.50130677971108!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca3ff67128961%3A0x55a56e8ffc5bc5d!2z66mA7Yuw7Lqg7Y287IqkIOyXreyCvA!5e0!3m2!1sko!2skr!4v1667180146128!5m2!1sko!2skr" width="720" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <h2 class="right_title">주소 및 연락처</h2>
+      <table border="0">
+        <tr>
+          <td class="table_head"> 주소</td>
+          <td colspan="3">(우)06220 서울시 강남구 테헤란로 212(역삼동)</td>
+        </tr>
+          <td class="table_head">전화번호</td>
+          <td>02)1234-1234</td>
+          <td class="table_head">팩스번호</td>
+          <td>02) 1234-4567</td>
+      </table>
+      
+
+      <h2 class="right_title">지하철</h2>
+      <div class="sub_bus">
+      <ul>
+        <li> </li>
+        <li> </li>
+        <li> </li>
+      </ul>
+    </div>
+      <h2 class="right_title">버스</h2>
+      <div class="sub_bus">
+        <ul>
+          <li> </li>
+          <li> </li>
+          <li> </li>
+        </ul>
+      </div>
+  </div>
+  
+
+  <!-- footer 부분-->
+  <footer>
+    <!-- 정보공개 알림이 있는 부분 -->
+      <div class = "footer_nav">
+        <a href="#" target="_blank">정보공개알림</a> | 
+        <a href="#" target="_blank">개인정보처리방침</a> | 
+        <a href="#" target="_blank">이용서비스현황</a> | 
+        <a href="#" target="_blank">이용규정</a> | 
+        <a href="#" target="_blank">이메일무단수집거부</a> | 
+        <a href="#" target="_blank">전화번호안내</a> | 
+        <a href="#" target="_blank">오시는길</a>
+      </div>
+      <!-- 주소가 있는 부분 -->
+      <div class="addr">
+          <ul>
+            <li>(우)05220 서울시 강남구 테헤란로 212(역삼동)&nbsp;&nbsp;대표전화 02-1234-1234&nbsp;&nbsp;팩스번호 02-1234-4567</li>
+            <li>Copyright &copy; 책마을책세상 All Right Reserved</li>
+          </ul>
+      </div>
+  </footer>
+</body>
+</html>

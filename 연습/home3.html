@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+    *{
+      border-collapse:collapse;
+      margin:0px;
+      padding:0px;
+      text-decoration: none;
+      color:black;
+      list-style: none;
+    }
+    div>span{
+      background: pink;
+      border:1px solid white;
+    }
+    .flexable{
+      display: flex;
+    }
+    div>div{
+      flex:1;
+      background:orange;
+      border:1px solid white;
+    }
+  </style>
+  <div>
+    <span>span</span>
+    <span>span</span>
+  </div>
+  <div>
+    <div class="flexable">div</div>
+    <div>div</div>
+    <div>div</div>
+  </div>
+  
+</body>
+</html>

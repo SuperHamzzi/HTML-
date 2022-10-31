@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>정리</title>
+  <!--외부 스타일 파일을 가져오기(연결)-->
+  <link href="../css/basic.css" rel="stylesheet" />
+
+  <style>
+    footer{
+      width: 960px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      /* background-color: aqua; 삭제할것 */
+    }
+    hr{
+      width: 960px;
+      /* border-color:blueviolet; */
+    }
+    .footer_nav{
+      width:960px;
+      height: 20px;
+      line-height: 20px; /*줄간격, 수직정렬 */
+      text-align: center;
+      border-top: 1px solid black;
+      border-bottom: 1px solid black;
+      margin-bottom: 10px;
+    }
+    /*줄바꿈이 안되는 태그 : 인라인 레벨 줄바꿈이 되는태그 : 블록레벨 */
+    .footer_nav > a{
+      display : inline-block;
+      padding : 0px 10px;
+      font-size: 0.8rem; /* 부모의 기준으로 1rem은 부모고 위아래로 조절한다 */
+    } 
+    .footer_nav > a:hover{
+      color: blue;
+      /*태그 글자(요소)에 마우스가 올라오면*/
+    }
+    .addr{
+      width: 960px;
+    }
+    .addr li{
+      margin-left: 30px;
+      line-height: 20px;
+      height: 22px;
+      
+    }
+   
+  </style>
+</head>
+<body>
+  <footer> <!-- 시멘틱 태그, 바닥글 :회사주소,전화번호-->
+             
+  <div class="footer_nav"> <!--클래스 이름이 같으면 같은 스타일을 적용-->
+    <a href="#">정보공개알림</a> |
+   <a href="#">개인정보처리방침</a> |
+   <a href="#">이용서비스현황</a> |
+   <a href="#">이용규정</a> |
+   <a href="#">이메일무단수집거부</a> |
+   <a href="#">전화번호안내</a> |
+   <a href="#">오시는길</a> 
+  </div>
+ 
+  <div class="addr">
+    <ul>
+      <li>(우)06220 서울시 강남구 테헤란로 212(역삼동) 대표 전화 : 02-1234-1234 / 팩스번호 :02-1234-5678</li>
+      <li>Copyright&copy;2022 책마을책세상 All Right Reserved</li>
+    </ul>
+  </div>
+</footer>
+</body>
+</html>

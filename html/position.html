@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>position</title>
+  <!-- 외부 스타일시트 문서 링크 -->
+  <link href="../css/basic.css"  rel="stylesheet" />
+  <style>
+    .top_content{  /* 부모 */
+      width: 960px;
+      height: 180px;
+      position: relative;
+
+      margin-bottom: 10px;
+    }
+    /* 자식은 부모 상자를 기준으로 위치를 잡지 */
+    .logo{
+      left: 10px;
+      top : 10px;
+      position: absolute; /* 부모 상자를 기준으로 고정 */
+    }
+        /* logo  상자 안을 정리 */
+    .logo>a{
+      display: inline-block;
+      overflow: hidden;
+    }
+    .logo img{
+      float: left;
+      width: 80px;
+      height: 60px;
+      line-height: 60px;
+      margin-right: 10px;
+    }
+   .logo h1{
+      display:inline-block;
+      height: 60px;
+      line-height: 60px;
+   }
+
+    .top_nav{
+      top:5px;
+      right: 10px;
+      position: absolute;/* 부모 상자를 기준으로 고정 */
+    }
+        /* top_nav 상자 안을 정리 */
+    .top_nav > a{
+      display: inline-block;
+      padding: 2px 6px;
+    }
+    .top_nav > a:hover{
+      color: white;
+      background-color: blueviolet;
+      border-radius: 5px;
+    }
+    
+    .main_nav{
+      left : 100px;
+      bottom: 10px;
+      position: absolute;
+      text-align: center;
+    }
+
+         /* main_nav 상자 안을 정리 */
+    .main_nav li{
+      display: inline-block;
+    }
+    .main_nav li>a{
+      display: block;
+      padding: 10px;
+      letter-spacing: 2px;
+      font-size: 1.2rem;
+      font-weight: 900;
+    }
+    .main_nav li>a:hover{
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <style>
+    .top_content{  /* 부모 */
+      width: 960px;
+      height: 180px;
+      position: relative;
+
+      margin-bottom: 10px;
+    }
+    /* 자식은 부모 상자를 기준으로 위치를 잡지 */
+    .logo{
+      left: 10px;
+      top : 10px;
+      position: absolute; /* 부모 상자를 기준으로 고정 */
+    }
+        /* logo  상자 안을 정리 */
+    .logo>a{
+      display: inline-block;
+      overflow: hidden;
+    }
+    .logo img{
+      float: left;
+      width: 80px;
+      height: 60px;
+      line-height: 60px;
+      margin-right: 10px;
+    }
+   .logo h1{
+      display:inline-block;
+      height: 60px;
+      line-height: 60px;
+   }
+   
+    .top_nav{
+      top:5px;
+      right: 10px;
+      position: absolute;/* 부모 상자를 기준으로 고정 */
+    }
+        /* top_nav 상자 안을 정리 */
+    .top_nav > a{
+      display: inline-block;
+      padding: 2px 6px;
+    }
+    .top_nav > a:hover{
+      color: white;
+      background-color: blueviolet;
+      border-radius: 5px;
+    }
+    
+    .main_nav{
+      left : 100px;
+      bottom: 10px;
+      position: absolute;
+      text-align: center;
+    }
+
+         /* main_nav 상자 안을 정리 */
+    .main_nav li{
+      display: inline-block;
+    }
+    .main_nav li>a{
+      display: block;
+      padding: 10px;
+      letter-spacing: 2px;
+      font-size: 1.2rem;
+      font-weight: 900;
+    }
+    .main_nav li>a:hover{
+      color: red;
+    }
+    .section{
+      width:960px;
+      overflow:hidden;
+      
+    }
+  </style>
+  <div class="top_content">
+      <!-- logo 부분 -->
+        <div class="logo">
+          <a href="index.html">
+            <img src="./images/logo.png">
+            <h1>책마을 책세상</h1>
+          </a>
+        </div>
+      <!-- 로그인 회원가입 사이트맵 -->
+        <div class="top_nav">
+          <a href="login.html" target="_blank"> 로그인 </a>
+          <a href="membership.html" target="_blank"> 회원가입 </a>
+          <a href="sitemap.html" target="_blank"> 사이트맵 </a>
+        </div>
+
+    <!-- 메인 메뉴 부분 -->
+    <div class="main_nav">
+      <ul> <!-- li*7>a[href="#"]-->
+        <li><a href="#">회사소개</a></li>
+        <li><a href="#">프로그램</a></li>
+        <li><a href="#">열린공간</a></li>
+        <li><a href="#">동아리모임</a></li>
+        <li><a href="#">이용안내</a></li>
+        <li><a href="#">자료실</a></li>
+        <li><a href="#">오시는길</a></li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

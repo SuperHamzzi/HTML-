@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link href ="../css/basic.css" rel="stylesheet">
+
+<style>
+  .section{
+    width: 960px;
+    overflow: hidden; /*자식 요소에서 float 속성을 쓰기 위해서 */
+  }
+.left_menu{
+  width: 130px;
+  margin-right: 10px; /* 오른쪽에 다른 요소들이 올때 간격을 띄어줌*/
+  float:left;
+  background-color: aquamarine; /*지울부분*/
+
+}
+.left_menu li{
+  width: 130px;
+  border-left:1px solid red;
+  border-right:1px solid red;
+  border-bottom:1px solid red;
+}
+.left_menu li:nth-child(1){
+  border-top: 1px solid red;
+  background-color: antiquewhite;
+  /* background-color:blue; */
+}
+.left_menu a{
+  display: block;
+  width: 130px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+}
+.left_menu a:hover{
+  color:blue;
+  background-color: blanchedalmond;
+}
+/*
+  선택자: first-child : 제일 위에 있는
+  선택자: nth-child(번호) : 번호에 해당하는
+  선택자:nth-child(2n)  : 짝수
+  선택자:nth-child(2n+1) : 홀수
+  선택자:last-child :  가장 마지막
+*/
+
+
+
+</style>
+
+</head>
+<body>
+  <div class="section">
+    <div class="left_menu">
+    <!-- ul>li*6>a[href="#"] -->  
+      <ul>
+        <li><a href="#">책마을책세상안내</a></li>
+        <li><a href="#">회사소개</a></li>
+        <li><a href="#">프로그램</a></li>
+        <li><a href="#">수강신청</a></li>
+        <li><a href="#">도서추천</a></li>
+        <li><a href="#">오시는길</a></li>
+      </ul>
+    </div> <!-- 왼쪽 끝-->
+    <div class="right">
+        <h1>오른쪽 부분</h1>
+
+    </div><!-- 오른쪽 끝-->
+  </div>
+
+  
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+
+  <title>이미지 정렬</title>
+  <link href="../css/basic.css" rel="stylesheet"/>
+  <style>
+    .container{
+      width: 960px;
+      margin-top: 50px; /*수정할 부분 */
+      display: flex; /* 자식배치와 관련된 것을 사용하겠다*/
+      /* justify-content: space-around; 양쪽 끝도 함께 여백을 설정 */
+      justify-content: space-between; /*양쪽 끝에 이미지를 붙이고 나머지 여백을 조정*/
+      background-color: aquamarine
+    }
+    img{ /* 자식 */
+      width: 210px;
+      height: 150px;
+    }
+    /* display : flex; -> 부모에만 설정 */
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="./images/center_content1_240170.JPG">
+    <img src="./images/center_content2_240170.JPG">
+    <img src="./images/center_content3_240170.JPG">
+    <img src="./images/center_content4_240170.JPG">
+  </div>
+</body>
+</html>
