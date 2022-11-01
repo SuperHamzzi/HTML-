@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>회원가입양식</title>
+  <link href="../css/basic.css" rel="stylesheet" />
+
+  <style>
+    table,tr,td,th{
+      padding:0px; margin:0px;
+    }
+    .member_form{
+        width: 960px;
+    }
+    table{
+      border-collapse: collapse;
+      border-spacing: 0px;
+    }
+    tr{
+      height: 40px;
+      line-height: 40px;
+
+    }
+    td{
+      border: 1px solid black;
+    }
+   .title{
+    width: 180px;  /* 수정할 부분 */
+    background-color: beige;
+    text-align: center;
+   }
+   .content{
+    width: 450px;
+    padding-left: 10px; /* 수정할 부분 */
+   }
+   .con1{
+    width: 250px;
+    height: 26px;
+   }
+   .gen{
+    width: 15px;
+    height:15px;
+   }
+  .p1{
+    width: 100px;
+    height: 26px;
+    line-height: 26px;
+  }
+  .a1{
+    width: 400px;
+    height: 26px;
+  }
+  .submit{
+    text-align: center;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+  }
+  #submit, #reset{ /*  점(.) : 클래스 , # : id,  콤마(,) : 여러 선택자에 같은 스타일을 적용하고 싶을 때 */
+    width: 100px;
+    height: 26px;
+    background-color: papayawhip;
+    border-radius: 5px;
+    border: 0.8px solid rgb(152, 148, 148);
+
+  }
+  .head1{
+    text-align:center;
+    border-top:none;
+    border-right:none;
+    border-left:none;
+  }
+  .head1>h1{
+    margin-bottom:10px;
+    text-decoration:underline;
+  }
+  </style>
+</head>
+<body>
+  <form action="" name="membership">
+   <div class="member_form">
+     <table border="0">
+      <tr>
+        <td colspan="2" class="head1"><h1>회원 가입 양식</h1></td>
+      </tr>
+      <tr>
+        <td class="title"><label for="id">아 이 디</label></td>
+        <td class="content"><input class="con1" type="text" name="id" id="id" required/></td>
+      </tr>
+      <tr>
+        <td class="title"><label for="password">비밀번호</label></td>
+        <td class="content"><input  class="con1" type="password" name="password" id="password"  required placeholder="4자~12자공백제외 특수문자 영문자"/></td>
+      </tr>
+      <tr>
+        <td class="title"><label for="pwd">비밀번호확인</label></td>
+        <td class="content"><input  class="con1" type="pwd" name="pwd" id="pwd" required/></td>
+      </tr>
+      <tr>
+        <td class="title"><label for="name">이 름</label></td>
+        <td class="content"><input class="con1" type="text" name="name" id="name" required placeholder="이름입력하세요"/></td>
+      </tr>
+      <tr>
+        <td class="title"><label for="gender">성 별</label></td>
+        <td class="content"><input class="gen" type="radio" name="gender" value="m"/> 남&nbsp;&nbsp;
+                            <input class="gen" type="radio" name="gender" value="w"/> 여</td>
+      </tr>
+      <tr>
+        <td class="title"><label for="phone">휴대폰번호</label></td>
+        <td class="content"><input type="text" name="phone1" id="phone1" class="p1" /> - 
+          <input type="text" name="phone2" id="phone2" class="p1" /> - 
+          <input type="text" name="phone3" id="phone3" class="p1" /></td>
+      </tr>
+      <tr>
+        <td class="title"><label for="email">이메일</label></td>
+        <td class="content"><input  class="con1" type="email" name="email" id="email" /></td>
+      </tr>
+      <tr>
+        <td class="title"><label for="addr1">우편번호</label></td>
+        <td class="content"><input type="button" name="addr_btn" id="addr_btn" value="우편번호"/>
+                            <input type="text" name="addr1" id="addr1" readonly class="p1" /></td>
+      </tr>
+      <tr>
+        <td class="title"><label for="addr2">주소</label></td>
+        <td class="content"><input type="text" name="addr2" id="addr2" class="a1" readonly /></td>
+      </tr>
+      <tr>
+        <td class="title"><label for="addr3">상세주소</label></td>
+        <td class="content"><input type="text" name="addr3" id="addr3" class="a1"/></td>
+      </tr>
+      <tr>
+        <td class="submit" colspan="2"><input type="submit" name="submit" id="submit" value="가입하기"/>&nbsp;&nbsp;&nbsp;
+          <input type="reset" name="reset" id="reset" value="새로작성"/></td>
+      </tr>
+      </table>
+
+ </div>
+
+</form> 
+</body>
+</html>

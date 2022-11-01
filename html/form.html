@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>form 양식</title>
+  <!--스타일시트, .글꼴 외부 링크-->
+
+  <!-- 스크립트 외부 연결-->
+  <style>
+    
+  </style>
+  </head>
+<body>
+  <h1>폼양식 연습</h1>
+  <h1>회원가입</h1>
+  <!-- <form action="전송위치, 입력양식을 처리할 파일명" method= "전송방식" name="이름"></form> -->
+  <action="" method="post" name="member" id="member">
+    <!-- label : 글자를 클릭해도 입력양식에 포커스,단 for와 id의 값이 같아야지만 가능-->
+    <label for="name">이 &nbsp;&nbsp;름</label>: <input type="text" name="user_name" id="name" class="input_text"><br/>
+    <label for="user_id">아이디</label> : <input type="text" name="user_id" id="user_id" class="input_text" required>
+            <input type="button" name="id_btn" id="id_btn" class="btn" value="중복확인"><br/>
+              <!-- <button name="btn1">중복확인1</button> -->
+    이 &nbsp;름 확인 : <input type="text" name="user_name" id="name" class="input_text" readonly><br/><!--읽기 전용:readonly>-->
+     아이디 확인: <input type="text" name="user_id" id="user_id" class="input_text" readonly><br/>
+     <label for="pwd">비밀 번호 : </label> <input type="password" name="pwd" id="pwd" class="input_text"><br/> 
+    <label for="gender">성 별:</label><input type="radio" name="gender" id="gender" value="m" checked>남&nbsp;&nbsp;
+                                       <input type="radio" name="gender" id="gender" value="w">여&nbsp;&nbsp;&nbsp;<br/>
+    <label for="check">취 미:</label>
+    <input type="checkbox" name="hobby" id="hobby" value="c1">농구<br/>
+    <input type="checkbox" name="hobby" id="hobby" value="c2">야구<br/>
+    <input type="checkbox" name="hobby" id="hobby" value="c3">축구<br/>
+    <input type="checkbox" name="hobby" id="hobby" value="c4">배구<br/>
+    <label for="email">이메일</label>
+    <input type="email" name="email" id="email">
+    <input type="button" name="email_btn" id="email_btn" class="btn" value="중복확인"><br/>
+  <input type="hidden" name="hidden" id="hidden"><br/>
+    <input type="file" name="file" id="file"><br/>
+    <input type="date" name="date" id="date"><br/>
+    <input type="month" name="month" id="month"><br/>
+    <select name="menu" id="menu">
+      <option value="m1" selected>떡볶이</option>
+      <option value="m2">피자</option>
+      <option value="m3">어묵</option>
+      <option value="m4">김밥</option>
+    </select><br/>
+    <textarea name="memo" cols="50" rows="4"></textarea><br>
+    <input type="submit" name="submit" id="submit" value="가입하기">
+    <input type="reset" name="reset" id="reset" value="다시작성">
+  </form>
+
+
+
+</body>
+</html>

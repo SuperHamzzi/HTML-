@@ -1,0 +1,16 @@
+*{
+  margin:0px;
+  padding:0px;
+  text-decoration:none;
+  border-collapse: collapse;
+  list-style:none;
+  color:black;
+  width:720px;
+  margin:auto;
+}
+.intro_img{
+  background-image:url("img/김재롱2.jpg");
+  position:relative;
+  width:720px;
+  height:300px;
+}
