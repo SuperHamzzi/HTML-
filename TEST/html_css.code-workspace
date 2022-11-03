@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"name": "html_css",
+			"path": ".."
+		},
+		{
+			"name": "img",
+			"path": "../../../바탕 화면/img"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "html_css"
+	}
+}
