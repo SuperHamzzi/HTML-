@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+      document.addEventListener('DOMContentLoaded', function(){  // ()=>{}
+          //문서 객체 읽어오기
+            const input = document.getElementById('todo');
+            const addButton = document.getElementById('addButton');
+            const todoList = document.getElementById('todoList');
+
+        // 변수 선언 - 삭제하기 위한
+            let keyCount = 0; // removeTodo() 문서객체를 쉽게 제거하기 위한 용도
+
+        // 함수 선언 
+        // 입력양식(input)에 내용이 없을 때 추가하지 않고 메시지 창을 띄우기
+        const addTodo= function(){
+           if(input.value.trim() === ''){
+            alert('입력된 일이 없습니다 \n 할 일을 입력해주세요...');
+            return;
+           }  //if 끝
+     
+
+        // 할 일을 입력하면 입력양식 아래 div 안에 할 일을 추가
+        // 할 일이 입력되면 아래의 요소(태그)를 생성하기
+        const item = document.createElement('div');
+        const checkbox = document.createElement('input')
+        const text  = document.createElement('span');
+        const button = document.createElement('button');
+
+        // 문서객체를 식별할 키를 만들기
+        let key = keyCount;
+        keyCount += 1
+
+        // item 객체를 조작하고 추가
+        item.setAttribute('data-key', key);  //setAttribute()을 설정
+        item.appendChild(checkbox);
+        item.appendChild(text);
+        item.appendChild(button);
+        todoList.appendChild(item);
+        // <div data-key=key><input><span></span><button></button></div>
+
+        // checkbox 객체 조작
+        checkbox.type='checkbox'; //<input type="checkbox">
+        checkbox.addEventListener('change', function(e){  //(e)=>{}
+              item.style.textDecoration = e.target.checked ? 'line-through' : '';
+                                        // 체크박스를 클릭하면 선을 긋기
+        }); // addEventListener 끝
+
+        // text 객체 조작
+        text.textContent = input.value;  // <span> input.value 값 </span>
+
+        //button 객체 조작
+        button.textContent ='제거하기';  //<button>제거하기</button>
+        button.addEventListener('click', function(){  // ()=>{ }
+            removeTodo(key);   // 제거 함수 호출
+        }); //addEventListener 끝
+        
+        // 입력이 끝나면 입력 양식(input)의 내용 비우기
+        input.value ='';
+      }  //addTodo()끝
+      
+      //removeTodo() 함수
+      const removeTodo = function(key){ // (key)=>{}
+         // 식별키로 문서 객체 제거 하기
+        const item = document.querySelector(`[data-key ="${key}"]`); 
+                // 위에서 지정한  <div data-key="숫자(key)">를 기준으로 요소(태그) 제거
+        todoList.removeChild(item);
+ 
+      }  //removeTodo 끝
+
+      // 이벤트 연결
+      addButton.addEventListener('click', addTodo);
+      input.addEventListener('keyup', function(e){ // (e) => {}
+          // Enter키를 누르면 addTodo() 함수 호출
+          const ENTER = 13;
+          if(e.keyCode === ENTER){ addTodo() };
+      })
+
+
+
+
+
+
+
+      });
+  </script>
+</head>
+<body>
+  <h1>오늘 할 일 목록</h1>
+  <input type="text" id="todo">
+  <button id="addButton">추가하기</button>
+  <div id="todoList"></div>
+  </div>  
+</body>
+</html>

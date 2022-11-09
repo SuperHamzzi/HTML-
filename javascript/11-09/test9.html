@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+   <title>Document</title>
+   <script>
+    // document.addEventListener('DOMContentLoaded', function(){
+    //   const h1 = document.getElementById('text');
+    //   const btn = document.getElementById('btn');
+
+    //   btn.addEventListener('click', function(){
+    //      h1.style.color = 'red';
+    //   });
+    // });
+    
+    window.onload = function(){
+      const h1 = document.getElementById('text');
+      const btn = document.getElementById('btn');
+      btn.onclick = changeTextColor;
+
+      function changeTextColor(){
+        h1.style.color='red';
+      }
+    }
+   </script>
+</head>
+<body>
+  <h1 id="text">글자색 변경</h1>
+  <button id="btn" onclick="changeTextColor()">클릭</button>
+</body>
+</html>

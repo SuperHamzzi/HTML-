@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    #fun1{
+      width: 600px;
+      height: 150px;
+      line-height: 150px;
+      color: red;
+      font-size: 20pt;
+      font-weight: 900;
+      text-align: center;
+      border: 1px solid blue;
+    }
+
+  #leap{
+    width: 600px;
+      height: 200px;
+      color:blueviolet;
+      font-size: 18pt;
+      font-weight: 900;
+      text-align: center;
+      border: 1px solid blue;
+  }
+  </style>
+</head>
+<body>
+  <h1>매개값이 선언적 함수 연습</h1>
+  <div id="fun1"></div>
+  <h1>2020 ~ 2025년까지 윤년여부 판별</h1>
+  <div id="leap"></div>
+
+  <script>
+    let result = testFunction(5, 7);
+    document.getElementById('fun1').innerHTML = result;
+
+    // 매개값과 리턴값이 있는 선언적 함수
+    function testFunction(num1, num2){
+      return num1 * num2;
+    }
+
+    // let result = testFunction(10, 3);
+    // document.getElementById('fun1').innerHTML = result;
+
+    function isLeap(year){
+      const  result = (year % 4 === 0) && (year % 100 !== 0) || (year % 400 === 0);
+
+      if(result){
+        return '윤년입니다';
+      }else{
+        return '윤년이 아닙니다.';
+      }
+
+    }
+    let text="";
+    for(let i=2020; i<=2025; i++){
+       const funResult = isLeap(i);
+      text += `${i} 연도는 ${funResult} <br/>` ;
+      document.getElementById('leap').innerHTML = text;
+    }
+
+</script>
+</body>
+</html>

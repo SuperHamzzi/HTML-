@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){ //()=>{
+        const p = document.getElementById('text');
+        const text = document.getElementById('testText');
+
+        let timerId=0;
+
+        text.addEventListener('focus',function(e){ // (e)=>{    //input 양식이 활성화되면(커서가 올려와 지면)
+              timerId = setInterval(function(){  //()=>{
+                  const length = text.value.length; // input 양식에 입력된 글자 수 
+                  p.textContent =`글자수 : ${length}`;
+               }, 50);   // setInterval(함수, 시간);
+        })
+        
+        text.addEventListener('blur', function(e){  //(e)=>{  // input 양식이 비활성화(포커스가 벗어나면)
+              clearInterval(timerId)
+        });
+    });
+  </script>
+</head>
+<body>
+  <p id="text">글자수 : 0 </p>
+  <input type="text" name="testText" id="testText" />
+</body>
+</html>

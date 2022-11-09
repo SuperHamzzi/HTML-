@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){  // () => {}
+          //문서객체 읽어오기      
+          // const input = document.querySelector('input[type=text]')
+          // const input = document.querySelector('input[type=text][name=testText]')
+          // const input = document.querySelector('#testText');
+          const p = document.getElementById('text');
+          const input = document.getElementById('testText');
+
+          // 키보드 이벤트 
+          // keydown : 키가 눌릴 때 실행, 키보드를 꾹 누르고 있을 때도, 입력될 때도 실행
+          //            단점) 웹브라우저에 따라서 아시아권 언어를 제대로 처리하지 못할 수 있음
+          // keypress : 키가 입력되었을 때 실행, 단점) 웹브라우저에 따라서 아시아권 언어를 제대로 처리하지 못할 수 있음
+          // keyup : 키보드에서 키가 떨어질 때 실행
+          //         단점) 키가 키보드에서 떨어질 때 발생하므로 특정 키를 꾹 누르고 있으면 글자 수를 세지 않음, 키를 떼면 글자수 보여줌
+
+
+          //이벤트 처리
+          input.addEventListener('keyup', function(e){  //e, event : 이벤트 객체(event object), 이벤트와 관련된 정보가 들어 있음
+              const length = input.value.length;  // 입력양식에 입력된 글자의 길이
+              p.textContent = `입력한 글자 수 : ${length}`;
+        });
+
+        // 기본적인 이벤트를 제거(막기) : 문서객체.preventDefault()
+        //    마우스 오른쪽 버튼 이벤트 : contextmenu
+        
+        const a = document.querySelector('a');
+        a.addEventListener('click', function(e){  // (e) => {}
+              e.preventDefault();  //클릭 처리가 안되도록 설정
+        });
+        // a.addEventListener('contextmenu',function(e){  //(e)=>{}
+        //       e.preventDefault();  // 마우스 오른쪽 버튼이 실행되지 않도록 설정
+        // })
+        a.addEventListener('contextmenu',(e)=>{  //function(e){ }
+                e.preventDefault();  // 마우스 오른쪽 버튼이 실행되지 않도록 설정
+        })
+
+    });
+
+  </script>
+</head>
+<body>
+   <p id="text">글자수 : 0 </p>
+   <input type="text" name="testText" id="testText" />
+   <br/><br/><br/>
+   <a href="https://www.naver.com">네이버</a>
+</body>
+</html>

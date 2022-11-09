@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      // let timer = 0;
+      // let timerId = 0;
+      let [timer, timerId] = [0, 0];
+
+      // 문서객체 읽어오기
+      const checkbox = document.getElementById('checkbox');
+      const p = document.getElementById('time');
+
+      // checkbox의 체크 여부에 따른 이벤트 처리
+      checkbox.addEventListener('change', function(e){
+        //체크 상태일때
+          if(e.currentTarget.checked){ // e.currentTarget 현재 작업 상태에 있는 요소(이벤트를 발생시킨 요소)
+            
+            timerId=setInterval(function(){
+              timer += 1;   // 화면에 보여줄 시간
+              p.textContent=`현재 활성화된 시간 : ${timer} 초`;
+            }, 1000);
+
+            // 체크 해제 상태일때
+          }else{
+                clearInterval(timerId);
+          }
+      });
+    });
+  </script>
+</head>
+<body>
+    <input type="checkbox" name="" id="checkbox">
+    <p id="time"> 0초 </p>
+</body>
+</html>

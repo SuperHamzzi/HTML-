@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    span{
+      display:inline-block;
+      width: 100px;
+      background-color: bisque;
+      text-align: center;
+      border: 1px solid blanchedalmond;
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded',function(){
+          // 문서 객체 읽기
+          const input = document.getElementById('inText');
+          const span = document.getElementById('outText');
+          const select = document.querySelector('select');
+
+          //input 이벤트 처리5
+          input.addEventListener('keyup', function(){
+              const currentValue = Number(input.value);  // input에 입력된 값 읽어오기
+              const index = select.options.selectedIndex;  //select 태그의 선택된 옵션의 인덱스
+              const selectedUnits = select.options[index];
+
+              // 계산하고 보여주기
+              // toFixed(소수이하 자릿수)
+          });
+
+          //select  이벤트 처리
+          select.addEventListener('change',function(){  //()=>{}
+              const currentValue = Number(input.value);  // input에 입력된 값 읽어오기
+              const index = select.options.selectedIndex;  //select 태그의 선택된 옵션의 인덱스
+              const selectedUnits = select.options[index];
+
+              // 계산하고 보여주기
+              
+              span.textContent = (currentValue * Number(selectedUnits.value)).toFixed(2);
+          });
+
+    });
+  </script>
+</head>
+<body>
+  <!-- cm 값 입력 -->
+  <input type="text" name="" id="inText" value="0"> cm = 
+  <!-- 환산된 값 표시 -->
+  <span id="outText"> 0 </span>
+  <!-- 단위 -->
+  <select >
+    <option value="10">밀리미터(mm)</option>
+    <option value="0.01">미터(m)</option>
+    <option value="0.393701">인치(inch)</option>
+  </select>
+</body>
+</html>

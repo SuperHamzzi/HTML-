@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <h3>[70,3,96,57,2,100중에서 최솟값 구하기]</h3>
+  <div id="minText"></div>
+  <script>
+    function min(array){
+      let minComp = array[0];
+      for(const item of array){
+        if(item<minComp){
+          minComp=item;
+        }
+      }
+      return minComp;
+    }
+
+    const testArray = [70,3,96,37,2,100];
+    const minResult = `최솟값 = ${min(testArray)}`;
+
+    document.getElementById('minText').innerHTML = minResult;
+    document.getElementById('minText').style.backgroundColor='green';
+
+
+  </script>
+</body>
+</html>

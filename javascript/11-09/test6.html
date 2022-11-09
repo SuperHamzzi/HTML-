@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+        //문서 객체 읽기
+        const radios = document.querySelectorAll('input[type=radio][name=fruit]');
+        const output = document.getElementById('output');
+
+        radios.forEach(function(radio){
+           //이벤트 연결
+           radio.addEventListener('change', function(e){
+                const current = e.currentTarget;
+                if(current.checked){
+                  output.textContent = `선택한 과일은 ${current.value} 입니다.`
+                }
+           });
+        });
+    });
+  </script>
+</head>
+<body>
+  <h1>좋아하는 과일을 선택하세요...</h1>
+  <input type="radio" name="fruit" id="" value="사과">사과 <br/>
+  <input type="radio" name="fruit" id="" value="딸기">딸기 <br/>
+  <input type="radio" name="fruit" id="" value="복숭아">복숭아 <br/>
+  <input type="radio" name="fruit" id="" value="키위">키위 <br/> 
+  <h1 id="output">아직 선택 안함</h1>
+</body>
+</html>
