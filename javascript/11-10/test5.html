@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <script>
+      // 사각형 클래스
+      class Rectangle { //클래스며
+        constructor(width, height) {  //생성자
+          this.width = width
+          this.height = height
+        }
+
+        // 사각형의 둘레를 구하는 메소드
+        getCircumference () {
+          return 2 * (this.width + this.height)
+        }
+
+        // 사각형의 넓이를 구하는 메소드
+        getArea () {
+          return this.width * this.height
+        }
+      }
+
+      // 정사각형 클래스
+      // class 자식클래스명  extends 부모클래스명{ }
+      class Square extends Rectangle {
+        constructor (length) {    //생성자
+          super(length, length)  // 부모 생성자를 호출
+        }
+      }
+
+      // 클래스 사용하기
+      const square = new Square(10, 20);  // 객체 생성
+      console.log(`정사각형의 둘레: ${square.getCircumference()}`) // 상속을 받으면 부모것은 내것
+      console.log(`정사각형의 넓이: ${square.getArea()}`) // 상속을 받으면 부모것은 내것
+    </script>
+  </head>
+  <body>
+  </body>

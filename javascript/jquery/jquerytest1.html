@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="../jquery-3.6.1.min.js"></script>
+  <script>
+    //window.jQuery = window. $ = jQuery
+    //$(선택자).메서드(매개변수, 매개변수,...)
+
+    /* jQuery 시작 ==>문서 객체의 생성 완료 시점을 잡는 이벤트 연결
+   */
+  $(document).ready(function(){
+    $('h1').css('color','red');
+    $('h1').css('background-color','cyan');  
+
+  $('#test1').click(function(){
+    // $('#text').slideDown("slow"); // 클릭할떄
+    $('#text').slideToggle('slow');
+  });  
+});
+  </script>
+  <style>
+    #test1{
+      padding: 5px;
+      text-align: center;
+      background-color: aquamarine;
+      border: 1px solid #000;
+      width:200px;
+      height: 50px;
+      line-height: 50px;
+    }
+    #text{
+      padding: 50xp;
+      display: none;
+      height: 400px;
+      width: 110px;
+      border:1px solid #000;
+
+    }
+  </style>
+</head>
+<body>
+  <h1>header</h1>
+  <h1>header</h1>
+  <h1>header</h1>
+  <div id="test1">클릭</div>
+  <div id="text">위에 버튼은 클릭해서 보여지는 부분입니다.</div>
+</body>
+</html>

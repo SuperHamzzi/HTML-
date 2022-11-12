@@ -1,0 +1,61 @@
+<script>
+  // 클래스 선언
+  class Student{
+    // constructor (){ 생성자 코드들 }
+    constructor(name, kor, eng, mat, science) {  // 객체를 초기화 
+                 this.name = name
+                 this.kor = kor
+                 this.eng = eng
+                 this.mat = mat
+                 this.science = science
+        }
+    // student(name, kor, eng, mat, science) {
+    //              this.name = name
+    //              this.kor = kor
+    //              this.eng = eng
+    //              this.mat = mat
+    //              this.science = science
+    //     }
+
+    //메서드 선언
+         getSum () {  // 자바 public 리턴타입 메서드명(){ }
+          return this.kor + this.eng + this.mat + this.science
+        }
+        getAverage () {
+          return this.getSum() / 4
+        }
+        toString () {
+          return `${this.name}\t${this.getSum()}점\t${this.getAverage()}점\n`
+        }
+
+
+  }
+
+  // // 클래스를 가지고 인스턴스 만들기
+  // const  student = new Student();
+  // //비교) 자바 Student student = new Student();
+
+  // //학생들에 대한 리스트 만들기
+  // const students=[
+  //   new Student(),  // 객체 생성(인스턴스-클래스를 기반으로 만든 객체)
+  //   new Student(),
+  //   new Student(),
+  //   new Student()
+  // ]
+
+  const students = []
+  students.push(new Student('홍길동', 87, 98, 88, 90))
+  students.push(new Student('한바다', 92, 98, 96, 88))
+  students.push(new Student('이태산', 76, 96, 94, 86))
+  students.push(new Student('한겨울', 98, 52, 98, 92))
+
+  //출력합니다.
+  let output = 'name\t총점\t평균\n'
+      for (const s of students) {
+        output += s.toString()
+
+      }
+      
+      console.log(output)
+    
+</script>
