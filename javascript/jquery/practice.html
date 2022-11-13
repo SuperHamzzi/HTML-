@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    .tabcontainer{
+      width:500px;
+      margin: 20px;
+      background-color: orange;
+    }
+    .tabnavigation.ul{
+      padding:0px;
+      margin: 0px;
+      display: none;
+    }
+    .tabnavigation ul li {
+      padding: 3px;
+      background-color: white;
+      width: 100px;
+      margin-bottom:2px;
+      text-align: center;
+      display: inline-block;
+      border: 1px solid black;
+      
+    }
+    .tabnavigation ul li:hover{
+      cursor: pointer;
+    }
+    .tabpages{
+      width:498px;
+      height:200px;
+      background-color:aqua;
+      z-index:1;
+      border:1px solid black;
+      position:relative;
+    }
+    .tabpage{
+        position: absolute;
+        top:10px;
+        left:10px;
+        right:10px;
+        height: 180px;
+        background-color:aqua;
+      }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded',()=>{
+      let container = document.querySelector('.tabcontainer');
+
+      let tabnav=container.querySelector('.tabnavigaition ul');
+      tabnav.style.display = "block";
+
+      let navitem = container.querySelector(".tabnavigatrion ul li");
+      let ident = navitem.id.split("_");
+
+      navitem.parentNode.setAttribute("data-current",ident);
+      navitem.style.backgroundColor='red';
+
+      let pages = container.querySelectorAll(".tabpage");
+      for(let i=1; i<pages.length;i++){
+        pages[i].style.display="none";
+      }
+    let tabs=container.querySelectorAll(".tabnavigation ul li");
+    for(let i=0; i< tabs.length;i++){
+      tabs[i].addEventListener('click',displayPage);
+    } 
+
+    });
+    let displayPage = function(){
+      let current =this.parentNode.getAttribute("data-current");
+    }
+
+
+  </script>
+</head>
+<body>
+  <div class="tabcontainer">
+    <div class="tabnavigation">
+      <ul>
+       <li id="tabnav_1">항목1</li>
+       <li id="tabnav_2">항목2</li>
+       <li id="tabnav_3">항목3</li>
+      </ul>
+    </div>
+    <div class="tabpages">
+    <div class="tabpage" id="tabpage_1">
+      첫번째 탭 페이지 내용
+    </div>
+    <div class="tabpage" id="tabpage_2">
+      두번째 탭 페이지 내용
+    </div>
+    <div class="tabpage" id="tabpage_3">
+      세번째 탭 페이지 내용
+    </div>
+  </div>
+  </div>
+</body>
+</html>

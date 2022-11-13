@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+  .tabcontainer{
+    /* padding: 5px;  */
+    width: 500px;
+    margin: 20px;
+    /* background-color: aqua; */
+  }
+  .tabnavigation ul{
+   padding: 0px;
+   margin: 0px; 
+   display: none;  /* 숨김 */
+  }
+  .tabnavigation ul li {  /*.tabnavigation>ul>li */
+   padding: 3px; 
+   width: 100px;
+   margin-bottom: 2px;
+   text-align: center;
+   display: inline-block; 
+   border: 1px solid black; 
+   background-color: white;  /* 웹 페이지에 따라 설정 */
+
+  }
+  .tabnavigation ul li:hover{
+    cursor: pointer;  /* 마우스 포인터 모양 설정 */
+  }
+  .tabpages{
+   position: relative;
+   width: 498px;
+   height: 200px;
+   z-index: 50;  /* 쌓이는 순서 : 위쪽에 배치하기 위해 */
+   border: 1px solid black; 
+   /* background-color: blueviolet;  */
+  }
+  .tabpage {
+   position: absolute;
+   top:10px;
+   left:10px;
+   right: 10px;
+   height: 180px; 
+   background-color: aqua;
+  }
+
+  </style>
+ <script>
+  // 각 컨테이너의 화면 설정
+  // 첫 번째 페이지 외에는 모두 감추고
+  // 첫 번째 탭을 강조
+    document.addEventListener('DOMContentLoaded', ()=>{  //function({ 
+        // 문서 객체 읽어오기
+        // const container = document.querySelector(".tabcontainer");
+        let container = document.querySelector(".tabcontainer");
+        
+        //요소 보이기
+        let tabnav=container.querySelector(".tabnavigation ul");
+        tabnav.style.display = "block";
+
+        //현재 탭 설정
+        let navitem = container.querySelector(".tabnavigation ul li");
+        let ident = navitem.id.split("_")[1];  // li의 id를 "_"를 기준으로 분리하고 그 중에서 [1] 인덱스 요소 가져다 ident에 담기
+                                               //"tabnav_1".split("_")  ==>  [0] : tabnav    [1] : 1 (번호)
+        navitem.parentNode.setAttribute("data-current",ident);  // data-current : 사용자 정의 속성
+        navitem.style.backgroundColor='red';
+        // navitem.setAttibute("style","background-color:red");
+
+        let pages = container.querySelectorAll(".tabpage");
+        for(let i=1; i<pages.length;i++){
+          pages[i].style.display="none";  // 페이지 숨기기
+        }
+
+      let tabs=container.querySelectorAll(".tabnavigation ul li");
+      for(let i=0; i< tabs.length;i++){
+          tabs[i].addEventListener('click',displayPage );  //탭이 클릭되면 이벤트리스너 처리
+     }
+
+    });    
+
+        //탭 클릭
+    let displayPage = function(){
+        let current=this.parentNode.getAttribute("data-current");  // getAttribute() 속성을 읽어오기
+        document.getElementById("tabnav_"+current).setAttribute("style","background-color:white");  /* 16진수로 표현한 웹컬러 #ffffff; */
+        document.getElementById("tabpage_"+current).style.display="none";
+        
+        let ident = this.id.split("_")[1];
+        this.setAttribute("style","background-color:#f00");  /* red: #ff0000 => #f00 */
+        document.getElementById("tabpage_"+ident).style.display="block";
+        this.parentNode.setAttribute("data-current",ident);
+    }
+
+ </script>
+</head>
+<body>
+ <div class="tabcontainer">
+   <div class="tabnavigation">
+      <ul>
+         <li id="tabnav_1">항목1</li>
+         <li id="tabnav_2">항목2</li>
+         <li id="tabnav_3">항목3</li>
+      </ul>
+   </div>
+
+   <div class="tabpages">
+      <div class="tabpage" id="tabpage_1">
+        첫 번째 탭 페이지 내용
+      </div>
+      <div class="tabpage" id="tabpage_2">
+         두 번째 탭 페이지 내용
+      </div>
+      <div class="tabpage" id="tabpage_3">
+        세 번째 탭 페이지 내용
+      </div>
+   </div>
+</div>
+</body>
+</html>
